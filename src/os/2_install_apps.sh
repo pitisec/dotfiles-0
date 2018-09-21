@@ -256,8 +256,6 @@ change_default_bash() {
 
     pathConfig="PATH=\"$brewPrefix/bin:\$PATH\""
     configs="
-# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-
 $pathConfig
 
 export PATH
@@ -309,13 +307,14 @@ export PATH
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 # nvm
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-add_nvm_configs() {
 
     declare -r LOCAL_SHELL_CONFIG_FILE="$HOME/.bash.local"
     declare -r NVM_DIRECTORY="$HOME/.nvm"
     declare -r NVM_GIT_REPO_URL="https://github.com/creationix/nvm.git"
-    declare -r CONFIGS="
-# Node Version Manager
+
+add_nvm_configs() {
+
+declare -r CONFIGS="# Node Version Manager
 
 export NVM_DIR=\"$NVM_DIRECTORY\"
 
@@ -427,11 +426,10 @@ main() {
 
     print_in_purple_dot "Installs"
 
-
     print_in_purple "Xcode"
     ###############
     install_xcode_command_line_tools
-    # install_xcode
+#    install_xcode
     set_xcode_developer_directory
     agree_with_xcode_licence
 
@@ -446,8 +444,7 @@ main() {
 
     print_in_purple "Bash"
     ###############
-    brew_install "Bash" "bash" \
-        && change_default_bash
+    brew_install "Bash" "bash" && change_default_bash
     brew_install "Bash Completion 2" "bash-completion@2"
     brew_install "Watch" "watch"
     brew_install "wGet" "wget"
@@ -492,15 +489,6 @@ main() {
     #brew_install "GPG" "gpg"
     #brew_install "GPG Agent" "gpg-agent"
     #brew_install "Pinentry" "pinentry-mac"
-
-
-    print_in_purple "Miscellaneous"
-    ###############
-    brew_install "Android File Transfer" "android-file-transfer" "caskroom/cask" "cask"
-    brew_install "Spectacle" "spectacle" "caskroom/cask" "cask"
-    brew_install "Unarchiver" "the-unarchiver" "caskroom/cask" "cask"
-    brew_install "Docker" "docker" "caskroom/cask" "cask"
-    brew_install "Kitematic" "kitematic" "caskroom/cask" "cask"
 
 
     print_in_purple "Miscellaneous"
