@@ -76,11 +76,11 @@ if [ ! -v $LOCAL_CONFIG_HOSTNAME ]; then
   declare -r LOCAL_CONFIG_HOSTNAME="laptop"
 fi
 
-execute "sudo defaults write /Library/Preferences/SystemConfiguration/com.apple.smb.server NetBIOSName -string 'Laptop' && \
+execute "sudo defaults write /Library/Preferences/SystemConfiguration/com.apple.smb.server NetBIOSName -string '$LOCAL_CONFIG_HOSTNAME' && \
          sudo scutil --set ComputerName '$LOCAL_CONFIG_HOSTNAME' && \
          sudo scutil --set HostName '$LOCAL_CONFIG_HOSTNAME' && \
          sudo scutil --set LocalHostName '$LOCAL_CONFIG_HOSTNAME'" \
-    "Set computer name"
+    "Set computer name to $LOCAL_CONFIG_HOSTNAME"
 
 execute "sudo systemsetup -setrestartfreeze on" \
     "Restart automatically if the computer freezes"
