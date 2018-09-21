@@ -72,7 +72,7 @@ execute "defaults write -g QLPanelAnimationDuration -float 0" \
 execute "defaults write com.apple.systempreferences NSQuitAlwaysKeepsWindows -bool false" \
     "Disable resume system-wide"
 
-if [ ! -v $LOCAL_CONFIG_HOSTNAME ]; then
+if [ ! -n "${LOCAL_CONFIG_HOSTNAME+set}" ]; then
   declare -r LOCAL_CONFIG_HOSTNAME="laptop"
 fi
 
