@@ -430,7 +430,7 @@ main() {
     print_in_purple "Xcode"
     ###############
     install_xcode_command_line_tools
-    #install_xcode
+    # install_xcode
     set_xcode_developer_directory
     agree_with_xcode_licence
 
@@ -513,11 +513,11 @@ main() {
 
     print_in_purple "Editors"
     ###############
-    # brew_install "Sublimie3" "sublimie" "caskroom/cask" "cask"
-    # brew_install "Atom" "spectacle" "caskroom/cask" "cask"
-    # brew_install "Visual Studio Code" "visual-studio-code" "caskroom/cask" "cask"
-    # brew_install "InteliJ" "intelij" "caskroom/cask" "cask"
-    # brew_install "Eclipse" "intelij" "caskroom/cask" "cask"
+    brew_install "Sublimie 3" "sublime-text" "caskroom/cask" "cask"
+    brew_install "Atom" "spectacle" "caskroom/cask" "cask"
+    brew_install "Visual Studio Code" "visual-studio-code" "caskroom/cask" "cask"
+    brew_install "InteliJ" "intellij-idea" "caskroom/cask" "cask"
+    brew_install "Eclipse" "eclipse-jee" "caskroom/cask" "cask"
 
 
     print_in_purple "Node"
