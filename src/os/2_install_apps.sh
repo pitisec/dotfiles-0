@@ -503,7 +503,7 @@ main() {
     print_in_purple "Editors"
     ###############
     brew_install "Sublime 3" "sublime-text" "caskroom/cask" "cask"
-    brew_install "Atom" "spectacle" "caskroom/cask" "cask"
+    brew_install "Atom" "atom" "caskroom/cask" "cask"
     brew_install "Visual Studio Code" "visual-studio-code" "caskroom/cask" "cask"
     brew_install "InteliJ" "intellij-idea" "caskroom/cask" "cask"
     brew_install "Eclipse" "eclipse-jee" "caskroom/cask" "cask"
