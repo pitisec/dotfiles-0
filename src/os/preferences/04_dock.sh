@@ -47,4 +47,16 @@ execute "defaults write com.apple.dock showhidden -bool true" \
 execute "defaults write com.apple.dock tilesize -int 60" \
     "Set icon size"
 
+## to check
+
+# execute "defaults write com.apple.dock persistent-others -array-add " \
+#         " '{\"tile-data\" = {\"list-type\" = 1;}; \"tile-type\" = \"recents-tile\";}'" \
+#         "Add recents used"
+
+# execute "defaults write com.apple.dock static-only -bool true" \
+#         "Show only running apps"
+
+# execute "defaults write com.apple.Dock showhidden -bool yes" \
+#         "Highlight hidden apps"
+
 killall "Dock" &> /dev/null

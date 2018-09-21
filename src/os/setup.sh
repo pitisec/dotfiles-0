@@ -316,7 +316,7 @@ main() {
     # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
     if ! $skipQuestions; then
-        ./5_restart.sh
+        ./6_restart.sh
     fi
 
 }

@@ -311,9 +311,10 @@ export PATH
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 add_nvm_configs() {
 
+    declare -r LOCAL_SHELL_CONFIG_FILE="$HOME/.bash.local"
+    declare -r NVM_DIRECTORY="$HOME/.nvm"
+    declare -r NVM_GIT_REPO_URL="https://github.com/creationix/nvm.git"
     declare -r CONFIGS="
-# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-
 # Node Version Manager
 
 export NVM_DIR=\"$NVM_DIRECTORY\"
@@ -513,7 +514,7 @@ main() {
 
     print_in_purple "Editors"
     ###############
-    brew_install "Sublimie 3" "sublime-text" "caskroom/cask" "cask"
+    brew_install "Sublime 3" "sublime-text" "caskroom/cask" "cask"
     brew_install "Atom" "spectacle" "caskroom/cask" "cask"
     brew_install "Visual Studio Code" "visual-studio-code" "caskroom/cask" "cask"
     brew_install "InteliJ" "intellij-idea" "caskroom/cask" "cask"
@@ -540,8 +541,8 @@ main() {
     print_in_purple "Vim"
     ###############
     brew_install "Vim" "vim --with-override-system-vi"
-    install_plugins
-    update_plugins
+    vim_install_plugins
+    vim_update_plugins
 
 
     print_in_purple "Web Font Tools"
