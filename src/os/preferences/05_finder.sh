@@ -70,6 +70,36 @@ execute "/usr/libexec/PlistBuddy -c 'Set :DesktopViewSettings:IconViewSettings:a
          /usr/libexec/PlistBuddy -c 'Set :StandardViewSettings:IconViewSettings:arrangeBy none' ~/Library/Preferences/com.apple.finder.plist" \
     "Set sort method"
 
+execute "defaults write com.apple.finder ShowStatusBar -bool true && \
+         defaults write com.apple.finder ShowPathbar -bool true && \
+         defaults write com.apple.finder \"NSWindowTabbingShoudShowTabBarKey-com.apple.finder.TBrowserWindow\" -bool true" \
+    "Tune Up Finder default window "
+
+execute "defaults write com.apple.finder 'NSToolbar Configuration Browser' '{"\
+        "\"TB Display Mode\" = 2;" \
+        "\"TB Icon Size Mode\" = 1;" \
+        "\"TB Is Shown\" = 1;" \
+        "\"TB Item Identifiers\" = (" \
+            "\"com.apple.finder.BACK\"," \
+            "NSToolbarFlexibleSpaceItem," \
+            "\"com.apple.finder.PATH\"," \
+            "\"com.apple.finder.ARNG\"," \
+            "NSToolbarSpaceItem," \
+            "\"com.apple.finder.NFLD\"," \
+            "NSToolbarSpaceItem," \
+            "\"com.apple.finder.SWCH\"," \
+            "\"com.apple.finder.ACTN\"," \
+            "\"com.apple.finder.SHAR\"," \
+            "NSToolbarFlexibleSpaceItem," \
+            "\"com.getdropbox.dropbox.garcon\"," \
+            "\"com.synology.CloudStation.FinderSyn\"," \
+            "\"com.apple.finder.SRCH\"" \
+            ");" \
+        "\"TB Size Mode\" = 1;" \
+        "\"TB Visibility Priority Values\" = {};" \ \
+        "}'" \
+    "Setting Finder default iconset "
+
 killall "Finder" &> /dev/null
 
 # Starting with Mac OS X Mavericks preferences are cached,

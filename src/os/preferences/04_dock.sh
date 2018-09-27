@@ -47,6 +47,10 @@ execute "defaults write com.apple.dock showhidden -bool true" \
 execute "defaults write com.apple.dock tilesize -int 60" \
     "Set icon size"
 
+# execute "defaults write com.apple.dock springboard-columns -int 9 && \
+#          defaults write com.apple.dock springboard-rows -int 5" \
+#     "Set proper column/row number in springboard"
+
 ## to check
 
 # execute "defaults write com.apple.dock persistent-others -array-add " \

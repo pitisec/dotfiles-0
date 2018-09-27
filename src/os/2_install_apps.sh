@@ -429,7 +429,7 @@ main() {
     print_in_purple "Xcode"
     ###############
     install_xcode_command_line_tools
-#    install_xcode
+    install_xcode
     set_xcode_developer_directory
     agree_with_xcode_licence
 
@@ -476,7 +476,7 @@ main() {
     ###############
     brew_install "Brotli" "brotli"
     brew_install "Zopfli" "zopfli"
-
+    brew_install "Unarchiver" "the-unarchiver" "caskroom/cask" "cask"
 
     print_in_purple "Git"
     ###############
@@ -486,24 +486,25 @@ main() {
 
     print_in_purple "GPG"
     ###############
-    #brew_install "GPG" "gpg"
-    #brew_install "GPG Agent" "gpg-agent"
-    #brew_install "Pinentry" "pinentry-mac"
+    brew_install "GPG" "gpg"
+    brew_install "GPG Agent" "gpg-agent"
+    brew_install "Pinentry" "pinentry-mac"
 
 
     print_in_purple "Miscellaneous"
     ###############
     brew_install "Android File Transfer" "android-file-transfer" "caskroom/cask" "cask"
     brew_install "Spectacle" "spectacle" "caskroom/cask" "cask"
-    brew_install "Unarchiver" "the-unarchiver" "caskroom/cask" "cask"
     brew_install "Docker" "docker" "caskroom/cask" "cask"
     brew_install "Kitematic" "kitematic" "caskroom/cask" "cask"
+    brew_install "FileZilla" "filezilla" "caskroom/cask" "cask"
 
 
     print_in_purple "Editors"
     ###############
     brew_install "Sublime 3" "sublime-text" "caskroom/cask" "cask"
     brew_install "Atom" "atom" "caskroom/cask" "cask"
+    brew_install "Visual Studio" "visual-studio-code" "caskroom/cask" "cask"
     brew_install "Visual Studio Code" "visual-studio-code" "caskroom/cask" "cask"
     brew_install "InteliJ" "intellij-idea" "caskroom/cask" "cask"
     brew_install "Eclipse" "eclipse-jee" "caskroom/cask" "cask"
@@ -518,6 +519,7 @@ main() {
     install_npm_package "!nstant-markdown-d" "instant-markdown-d"
     install_npm_package "Gulp" "gulp"
     install_npm_package "Bower" "bower"
+    install_npm_package "Yo" "yo"
 
 
     print_in_purple "tmux"
