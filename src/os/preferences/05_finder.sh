@@ -91,14 +91,16 @@ execute "defaults write com.apple.finder 'NSToolbar Configuration Browser' '{"\
             "\"com.apple.finder.ACTN\"," \
             "\"com.apple.finder.SHAR\"," \
             "NSToolbarFlexibleSpaceItem," \
-            "\"com.getdropbox.dropbox.garcon\"," \
-            "\"com.synology.CloudStation.FinderSyn\"," \
             "\"com.apple.finder.SRCH\"" \
             ");" \
         "\"TB Size Mode\" = 1;" \
         "\"TB Visibility Priority Values\" = {};" \ \
         "}'" \
     "Setting Finder default iconset "
+    
+    # "\"com.getdropbox.dropbox.garcon\"," \
+    # "\"com.synology.CloudStation.FinderSyn\"," \
+
 
 killall "Finder" &> /dev/null
 
