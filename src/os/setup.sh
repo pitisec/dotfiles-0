@@ -204,7 +204,7 @@ generate_defaults() {
       printf "%s" "Generating config file $LOCAL_CONFIG_FILE.tmp, change it and rename to $LOCAL_CONFIG_FILE"
       printf "%s\n" \
 "#!/bin/bash
-echo lalala
+
 declare -r LOCAL_CONFIG_NAME=\"\"
 declare -r LOCAL_CONFIG_FULLNAME=\"\"
 declare -r LOCAL_CONFIG_EMAIL=\"\"
@@ -256,7 +256,7 @@ main() {
     # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
     # Load / Create defaults
-
+## TODO
     if [ -f "$LOCAL_CONFIG_FILE" ]; then
       run_defaults || exit 1
     else
