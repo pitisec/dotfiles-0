@@ -481,6 +481,8 @@ main() {
     print_in_purple "Git"
     ###############
     brew_install "Git" "git"
+    brew_install "Git Flow" "git-flow"
+    brew_install "Git lsf" "git-lfs"
     brew_install "SourceTree" "sourcetree" "caskroom/cask" "cask"
 
 
@@ -504,7 +506,6 @@ main() {
     ###############
     brew_install "Sublime 3" "sublime-text" "caskroom/cask" "cask"
     brew_install "Atom" "atom" "caskroom/cask" "cask"
-    brew_install "Visual Studio" "visual-studio-code" "caskroom/cask" "cask"
     brew_install "Visual Studio Code" "visual-studio-code" "caskroom/cask" "cask"
     brew_install "InteliJ" "intellij-idea" "caskroom/cask" "cask"
     brew_install "Eclipse" "eclipse-jee" "caskroom/cask" "cask"
