@@ -426,10 +426,11 @@ main() {
 
     print_in_purple_dot "Installs"
 
+
     print_in_purple "Xcode"
     ###############
     install_xcode_command_line_tools
-    install_xcode
+    # install_xcode
     set_xcode_developer_directory
     agree_with_xcode_licence
 
@@ -467,8 +468,8 @@ main() {
     print_in_purple "Browsers"
     ###############
     brew_install "Chrome" "google-chrome" "caskroom/cask" "cask"
-    brew_install "Chrome Canary" "google-chrome-canary" "caskroom/versions" "cask"
-    brew_install "Firefox" "firefox" "caskroom/cask" "cask"
+    # brew_install "Chrome Canary" "google-chrome-canary" "caskroom/versions" "cask"
+    # brew_install "Firefox" "firefox" "caskroom/cask" "cask"
     brew_install "Flash" "flash-npapi" "caskroom/cask" "cask"
 
 
@@ -486,11 +487,11 @@ main() {
     brew_install "SourceTree" "sourcetree" "caskroom/cask" "cask"
 
 
-    print_in_purple "GPG"
-    ###############
-    brew_install "GPG" "gpg"
-    brew_install "GPG Agent" "gpg-agent"
-    brew_install "Pinentry" "pinentry-mac"
+    # print_in_purple "GPG"
+    # ###############
+    # brew_install "GPG" "gpg"
+    # brew_install "GPG Agent" "gpg-agent"
+    # brew_install "Pinentry" "pinentry-mac"
 
 
     print_in_purple "Miscellaneous"
@@ -499,16 +500,16 @@ main() {
     brew_install "Spectacle" "spectacle" "caskroom/cask" "cask"
     brew_install "Docker" "docker" "caskroom/cask" "cask"
     brew_install "Kitematic" "kitematic" "caskroom/cask" "cask"
-    brew_install "FileZilla" "filezilla" "caskroom/cask" "cask"
+    # brew_install "FileZilla" "filezilla" "caskroom/cask" "cask"
 
 
     print_in_purple "Editors"
     ###############
     brew_install "Sublime 3" "sublime-text" "caskroom/cask" "cask"
-    brew_install "Atom" "atom" "caskroom/cask" "cask"
+    # brew_install "Atom" "atom" "caskroom/cask" "cask"
     brew_install "Visual Studio Code" "visual-studio-code" "caskroom/cask" "cask"
     brew_install "InteliJ" "intellij-idea" "caskroom/cask" "cask"
-    brew_install "Eclipse" "eclipse-jee" "caskroom/cask" "cask"
+    # brew_install "Eclipse" "eclipse-jee" "caskroom/cask" "cask"
 
 
     print_in_purple "Node"
