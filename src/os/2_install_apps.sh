@@ -430,7 +430,7 @@ main() {
     print_in_purple "Xcode"
     ###############
     install_xcode_command_line_tools
-    # install_xcode
+    install_xcode
     set_xcode_developer_directory
     agree_with_xcode_licence
 
@@ -453,7 +453,8 @@ main() {
     brew_install "mc" "mc"
     brew_install "ShellCheck" "shellcheck"
     brew_install "fzf" "fzf"
-
+    brew_install "lsusb" "lsusb"
+    brew_install "ssh-copy-id" "ssh-copy-id"
 
     print_in_purple "nvm"
     ###############
@@ -470,6 +471,7 @@ main() {
     brew_install "Chrome" "google-chrome" "caskroom/cask" "cask"
     # brew_install "Chrome Canary" "google-chrome-canary" "caskroom/versions" "cask"
     # brew_install "Firefox" "firefox" "caskroom/cask" "cask"
+    # brew_install "Opera" "opera" "caskroom/cask" "cask"
     brew_install "Flash" "flash-npapi" "caskroom/cask" "cask"
 
 
@@ -478,6 +480,7 @@ main() {
     brew_install "Brotli" "brotli"
     brew_install "Zopfli" "zopfli"
     brew_install "Unarchiver" "the-unarchiver" "caskroom/cask" "cask"
+
 
     print_in_purple "Git"
     ###############
@@ -500,6 +503,12 @@ main() {
     brew_install "Spectacle" "spectacle" "caskroom/cask" "cask"
     brew_install "Docker" "docker" "caskroom/cask" "cask"
     brew_install "Kitematic" "kitematic" "caskroom/cask" "cask"
+    brew_install "Quicklook JSON" "quicklook-json" "caskroom/cask" "cask"
+    brew_install "Quicklook CSV" "quicklook-csv" "caskroom/cask" "cask"
+    brew_install "iterm2" "iterm2" "caskroom/cask" "cask"
+    brew_install "caffeine" "caffeine" "caskroom/cask" "cask"
+    brew_install "dropbox" "dropbox" "caskroom/cask" "cask"
+    brew_install "Synology Cloud Drive" "synology-drive" "caskroom/cask" "cask"
     # brew_install "FileZilla" "filezilla" "caskroom/cask" "cask"
 
 
@@ -509,7 +518,8 @@ main() {
     # brew_install "Atom" "atom" "caskroom/cask" "cask"
     brew_install "Visual Studio Code" "visual-studio-code" "caskroom/cask" "cask"
     brew_install "InteliJ" "intellij-idea" "caskroom/cask" "cask"
-    # brew_install "Eclipse" "eclipse-jee" "caskroom/cask" "cask"
+    brew_install "Eclipse" "eclipse-jee" "caskroom/cask" "cask"
+    brew_install "pgAdmin3" "pgadmin3" "caskroom/cask" "cask"
 
 
     print_in_purple "Node"
@@ -547,7 +557,7 @@ main() {
     print_in_purple "JAVA"
     ###############
     brew_install "Java 1.8" "java8" "caskroom/versions" "cask"
-    brew_install "Spring-boot-cli" "springboot" "pivotal/tap" ""
+    # brew_install "Spring-boot-cli" "springboot" "pivotal/tap" ""
 
 
     print_in_purple "Cleanup"
