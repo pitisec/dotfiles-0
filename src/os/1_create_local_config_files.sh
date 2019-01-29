@@ -7,7 +7,7 @@ cd "$(dirname "${BASH_SOURCE[0]}")" \
 
 create_bash_local() {
 
-    declare -r FILE_PATH="$HOME/.bash.local"
+    declare FILE_PATH="$HOME/.bash.local"
 
     # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
@@ -21,7 +21,7 @@ create_bash_local() {
 
 create_gitconfig_local() {
 
-    declare -r FILE_PATH="$HOME/.gitconfig.local"
+    declare FILE_PATH="$HOME/.gitconfig.local"
 
     # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
@@ -50,7 +50,7 @@ create_gitconfig_local() {
 
 create_vimrc_local() {
 
-    declare -r FILE_PATH="$HOME/.vimrc.local"
+    declare FILE_PATH="$HOME/.vimrc.local"
 
     # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 

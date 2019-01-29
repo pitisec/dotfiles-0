@@ -238,7 +238,7 @@ opt_out_of_analytics() {
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 change_default_bash() {
 
-    declare -r LOCAL_SHELL_CONFIG_FILE="$HOME/.bash.local"
+    declare LOCAL_SHELL_CONFIG_FILE="$HOME/.bash.local"
 
     local configs=""
     local pathConfig=""
@@ -308,7 +308,7 @@ export PATH
 # nvm
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
-    declare -r LOCAL_SHELL_CONFIG_FILE="$HOME/.bash.local"
+    declare LOCAL_SHELL_CONFIG_FILE="$HOME/.bash.local"
     declare -r NVM_DIRECTORY="$HOME/.nvm"
     declare -r NVM_GIT_REPO_URL="https://github.com/creationix/nvm.git"
 
@@ -508,7 +508,7 @@ main() {
     brew_install "iterm2" "iterm2" "caskroom/cask" "cask"
     brew_install "caffeine" "caffeine" "caskroom/cask" "cask"
     brew_install "dropbox" "dropbox" "caskroom/cask" "cask"
-    brew_install "Synology Cloud Drive" "synology-drive" "caskroom/cask" "cask"
+    brew_install "Synology Cloud Drive" "synology-drive" "homebrew/cask-drivers" "cask"
     # brew_install "FileZilla" "filezilla" "caskroom/cask" "cask"
 
 
@@ -519,7 +519,7 @@ main() {
     brew_install "Visual Studio Code" "visual-studio-code" "caskroom/cask" "cask"
     brew_install "InteliJ" "intellij-idea" "caskroom/cask" "cask"
     brew_install "Eclipse" "eclipse-jee" "caskroom/cask" "cask"
-    brew_install "pgAdmin3" "pgadmin3" "caskroom/cask" "cask"
+    brew_install "pgAdmin3" "pgadmin3" "homebrew/cask-versions" "cask"
 
 
     print_in_purple "Node"

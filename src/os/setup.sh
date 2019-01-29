@@ -4,7 +4,7 @@ declare -r GITHUB_REPOSITORY="pitisec/dotfiles"
 declare -r DOTFILES_ORIGIN="git@github.com:$GITHUB_REPOSITORY.git"
 declare -r DOTFILES_TARBALL_URL="https://github.com/$GITHUB_REPOSITORY/tarball/master"
 declare -r DOTFILES_UTILS_URL="https://raw.githubusercontent.com/$GITHUB_REPOSITORY/master/src/os/utils.sh"
-declare -r LOCAL_CONFIG_FILE="$HOME/.dotfiles.local"
+declare LOCAL_CONFIG_FILE="$HOME/.dotfiles.local"
 
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
@@ -198,29 +198,44 @@ verify_os() {
 
 generate_defaults() {
 
-    if [ -e "$LOCAL_CONFIG_FILE.tmp" ]; then
-      printf "%s" "Change config file $LOCAL_CONFIG_FILE.tmp and change it's name to $LOCAL_CONFIG_FILE" || exit 1;
-    else
-      printf "%s" "Generating config file $LOCAL_CONFIG_FILE.tmp, change it and rename to $LOCAL_CONFIG_FILE"
-      printf "%s\n" \
-"#!/bin/bash
+    printf "%s\n" "No config file $LOCAL_CONFIG_FILE found. Please answer few questions:"
 
-declare -r LOCAL_CONFIG_NAME=\"\"
-declare -r LOCAL_CONFIG_FULLNAME=\"\"
-declare -r LOCAL_CONFIG_EMAIL=\"\"
-declare -r LOCAL_CONFIG_HOSTNAME=\"\"" \
-      >> $LOCAL_CONFIG_FILE.tmp
-    fi
+    while [ -z "$LOCAL_CONFIG_NAME" ]; do
+        ask "Please specify your name: "
+        LOCAL_CONFIG_NAME="$(get_answer)"
+    done
 
+    while [ -z "$LOCAL_CONFIG_FULLNAME" ]; do
+        ask "Please specify your full name: "
+        LOCAL_CONFIG_FULLNAME="$(get_answer)"
+    done
+
+    while [ -z "$LOCAL_CONFIG_EMAIL" ]; do
+        ask "Please specify your email: "
+        LOCAL_CONFIG_EMAIL="$(get_answer)"
+    done
+
+    while [ -z "$LOCAL_CONFIG_HOSTNAME" ]; do
+        ask "Please specify your hostname: "
+        LOCAL_CONFIG_HOSTNAME="$(get_answer)"
+    done
+
+    printf "%s\n" \
+    "#!/bin/bash
+eval LOCAL_CONFIG_NAME=\"$LOCAL_CONFIG_NAME\"
+eval LOCAL_CONFIG_FULLNAME=\"$LOCAL_CONFIG_FULLNAME\"
+eval LOCAL_CONFIG_EMAIL=\"$LOCAL_CONFIG_EMAIL\"
+eval LOCAL_CONFIG_HOSTNAME=\"$LOCAL_CONFIG_HOSTNAME\"" \
+        > $LOCAL_CONFIG_FILE
 }
 
 run_defaults() {
-
-    if [ ! -x "$LOCAL_CONFIG_FILE" ]; then
-      chmod u+x $LOCAL_CONFIG_FILE
+    if [ -f "$LOCAL_CONFIG_FILE" ]; then
+        if [ ! -x "$LOCAL_CONFIG_FILE" ]; then
+          chmod u+x $LOCAL_CONFIG_FILE
+        fi
+        . "$LOCAL_CONFIG_FILE" || exit 1
     fi
-    . "$LOCAL_CONFIG_FILE" || exit 1
-
 }
 
 # ----------------------------------------------------------------------
@@ -255,13 +270,12 @@ main() {
 
     # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
-    # Load / Create defaults
-## TODO
-    if [ -f "$LOCAL_CONFIG_FILE" ]; then
-      run_defaults || exit 1
-    else
+    # Create and/or run defaults
+
+    if [ ! -f "$LOCAL_CONFIG_FILE" ]; then
       generate_defaults || exit 1
     fi
+    run_defaults || exit 1
 
     # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
