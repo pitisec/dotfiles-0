@@ -430,7 +430,10 @@ main() {
     print_in_purple "Xcode"
     ###############
     install_xcode_command_line_tools
-    install_xcode
+    ask_for_confirmation "Do you want to install xcode?"
+    if answer_is_yes; then
+        install_xcode
+    fi
     set_xcode_developer_directory
     agree_with_xcode_licence
 
